@@ -24,13 +24,13 @@ print(june_prcp)
 
 ![image](https://user-images.githubusercontent.com/95254809/156959724-77fa398b-c8b7-4c76-aaa0-648db611e451.png)
 
-
 The query given below can be preformed in order to get the temperature data from the most active station. This time I am going to use December as an example. Following is the query:
 
-results = session.query(Measurement.tobs).\
+dec_temp = session.query(Measurement.tobs).\
 filter(Measurement.station == 'USC00519281').\
 filter(extract('month', Measurement.date)==12).all()
 print(results)
 
-![image](https://user-images.githubusercontent.com/95254809/156959841-55eab881-a472-4f86-a34a-bad7e1158bf2.png)
+![image](https://user-images.githubusercontent.com/95254809/156960342-14572cf0-28b1-4797-a77c-7d1a415515ad.png)
 
+Using the results from the above query, we can plot the results as a histogram. This will show us the frequency of various temperatures. 
